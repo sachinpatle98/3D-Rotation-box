@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  background: url("images/darkBuildings.jpg");
+  background-size: 100% 100%;
+  place-items: center;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  animation: rot 5s linear infinite;
+  z-index: 0;
+}
+
+img {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background: radial-gradient(yellow, black);
+  text-align: center;
+  line-height: 40px;
+  perspective: 900px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: bolder;
+  perspective-origin: center;
+}
+
+img:nth-child(1) {
+  transform: rotateY(0deg) translateZ(100px);
+}
+img:nth-child(2) {
+  transform: rotateY(90deg) translateZ(100px);
+}
+img:nth-child(3) {
+  transform: rotateY(180deg) translateZ(100px);
+}
+img:nth-child(4) {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+img:nth-child(5) {
+  transform: rotateX(90deg) translateZ(100px);
+}
+img:nth-child(6) {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+@keyframes rot {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
